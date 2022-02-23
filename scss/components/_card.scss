@@ -1,11 +1,17 @@
+// to use the Math calculation in the value of property
+// @use "sass:math";
+// the above is not supported in Ritwick's version of Live Sass Comp
+
 .card {
     display: block;
     padding: $base-padding;
     border: $base-border-thickness solid #ddd;
     box-shadow: $base-box-shadow;
+    // border-radius: math.div($base-border-radius, 4);
+    border-radius: $base-border-radius / 4;
 
     .card-title {
-        font-size: $base-font-size;
+        font-size: $font-size-lg;
         padding-bottom: $base-padding;
         font-weight: bold;
     }
