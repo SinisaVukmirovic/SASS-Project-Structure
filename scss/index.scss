@@ -1,11 +1,11 @@
 // order of imports matters
 
 // vars and funcs
-@import './variables/variables.scss';
+@import 'variables';
 // base and layout
-@import './base/base.scss';
+@import 'base';
 // colors
 
 // components (btns, card, nav...)
-@import './components/card.scss';
+
 // utilities (margin, padding, opacity...)
