@@ -1,0 +1,59 @@
+// Mixins in Sass
+// arguments can be passed in mixin functions, as well as default value
+@mixin btn($bg-color: #e2e2e2) {
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    padding: $base-padding $base-padding * 2;
+    border-radius: $base-border-radius;
+    background-color: $bg-color;
+}
+
+// will use default value, when no args value is passed
+.btn {
+    @include btn;
+}
+
+@each $key, $val in $colors {
+    .btn-#{$key} {
+        @include btn($val);
+
+        &:hover {
+            background-color: lighten($val, 10);
+        }
+    }
+
+    .btn-outlined-#{$key} {
+        @include btn(#fff);
+        border: $base-border-thickness solid $val;
+
+        &:hover {
+            background-color: $val;
+        }
+    }
+}
+
+// code without the mixin
+// @each $key, $val in $colors {
+//     .btn-#{$key} {
+//         text-decoration: none;
+//         cursor: pointer;
+//         display: inline-block;
+//         border: 0;
+//         padding: $base-padding $base-padding * 2;
+//         border-radius: $base-border-radius;
+//         background-color: $val;
+//     }
+
+//     .btn-outline-#{$key} {
+//         text-decoration: none;
+//         cursor: pointer;
+//         display: inline-block;
+//         border: 0;
+//         padding: $base-padding $base-padding * 2;
+//         border-radius: $base-border-radius;
+//         background-color: #fff;
+//         border: $base-border-thickness solid $val;
+//     }
+// }

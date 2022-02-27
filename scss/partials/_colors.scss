@@ -4,6 +4,11 @@
     .text-#{$key} {
         color: $val;
     }
+    .text-hover-#{$key} {
+        &:hover {
+          color: $val;
+        }
+    }
 
     // Parent Selector
     // .text-hover-#{$key} {
