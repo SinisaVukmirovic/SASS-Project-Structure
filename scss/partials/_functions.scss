@@ -1,0 +1,7 @@
+@function light-comp($color) {
+    // compliment is a build in function
+    $complement: complement($color);
+    $light-complement: lighten($complement, 30%);
+
+    @return $light-complement;
+}

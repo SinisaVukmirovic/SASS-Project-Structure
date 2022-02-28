@@ -32,6 +32,19 @@
             background-color: $val;
         }
     }
+
+    // Custom Functions in Sass
+    .btn-complement-#{$key} {
+        @include btn($val);
+
+        // overriding the color value
+        color: light-comp($val);
+
+        &:hover {
+            color: $val;
+            background-color: light-comp($val);
+        }
+    }
 }
 
 // code without the mixin
