@@ -3,9 +3,10 @@
 // vars and funcs
 @import 'partials/functions';
 @import 'partials/variables';
-@import 'partials/breakpoints';
 // base and layout
 @import 'partials/base';
+@import 'partials/breakpoints';
+@import 'partials/grid';
 // colors
 @import 'partials/colors';
 // components (btns, card, nav...)

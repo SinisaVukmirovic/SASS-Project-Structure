@@ -44,8 +44,9 @@ $breakpoints: (
 }
 
 .responsive-test {
-    // width: 5rem;
-    height: 3rem;
+    margin: 1rem 0;
+    padding: 0 1rem;
+    
     @include xs {
         background-color: red;
     }
