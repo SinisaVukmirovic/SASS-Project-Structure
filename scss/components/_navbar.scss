@@ -1,4 +1,6 @@
-.flex-layout {
+// placehoder rule with % sign instead of .class
+// will not get compiled into CSS rules
+%flex-layout {
     width: 100%;
     display: flex;
     align-items: center;
@@ -7,7 +9,7 @@
 }
 
 .navbar {
-    @extend .flex-layout;
+    @extend %flex-layout;
 
     padding: $base-padding $base-padding * 2;
     box-shadow: $base-box-shadow;
@@ -17,6 +19,14 @@
     }
 
     .container {
-        @extend .flex-layout;
+        @extend %flex-layout;
+    }
+}
+
+@each $key, $val in $colors {
+    .navbar-#{$key} {
+        @extend .navbar;
+
+        background-color: $val;
     }
 }
