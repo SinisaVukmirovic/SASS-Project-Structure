@@ -1,6 +1,12 @@
 @use "sass:math";
 
 $grid-columns: 12;
+$grid-gaps: (
+    "0": 0,
+    "1": 10px,
+    "2": 20px,
+    "3": 30px
+);
 
 // base layout classes
 .container {
@@ -14,6 +20,19 @@ $grid-columns: 12;
 .row {
     display: flex;
     flex-flow: row wrap;
+}
+
+// grid gaps
+@each $key, $val in $grid-gaps {
+    // selecting the direct descendant of the grid class element
+    .gap-#{$key} > * {
+        padding: $val;
+    }
+    // to remove gaps on the left and right side one the begining and ending elems
+    .gap-#{$key} {
+        margin-left: -$val;
+        margin-right: -$val;
+    }
 }
 
 // collumns classes
