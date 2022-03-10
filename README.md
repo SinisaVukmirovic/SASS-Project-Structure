@@ -58,8 +58,21 @@ $colors: (
 
     @for $i from 1 through 9 {
         .text-#{$key}-light-#{$i} {
-            color: ($val, ${i} * 10);
+            background-color: mix(white, $val, ${i} * 10);
         }
+    }
+}
+</code></pre>
+
+#### Conditionals (IF/ELSE)
+##### We use conditionals to check if conditional is true or false, in example, iterating through light or dark color variation.
+##### Inside of an Each Loop
+<pre><code>
+@each $key, $val in $colors {
+    @if ($val != black and $val != white) {
+        // some code..
+    } @else {
+        // some code..
     }
 }
 </code></pre>
