@@ -20,3 +20,28 @@ _variables.scss
 
 @import "variables";
 </code></pre>
+
+#### Math
+##### We use SASS Math package by @use "sass:math" at the top of the file
+<pre><code>
+@use "sass:math";
+
+math.div(10, 2);    => 5
+math.floor(3.7);    => 3    
+math.max(1px, 10px, 15px, 5px);    => 15px    
+</code></pre>
+
+#### Map
+##### Maps is SASS is like a colection of variables or values in key-value pairs.
+<pre><code>
+$colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "blue": #1919e6,
+    "red": #e61919
+);
+
+.btn {
+    background-color: map-get($colors, "blue");
+}
+</code></pre>
