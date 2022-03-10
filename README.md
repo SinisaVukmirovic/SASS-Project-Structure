@@ -45,3 +45,21 @@ $colors: (
     background-color: map-get($colors, "blue");
 }
 </code></pre>
+
+#### Each & For loops
+##### With Each Loop we cycle through the key-value pair inside of a Map, to generate CSS classes with values from a Map.
+##### To output variable name inside the selector name itself, we wrap the variable inside of a {} with a # in front of it.
+##### For loop is used for creating variations, light/dark variations for example, 
+<pre><code>
+@each $key, $val in $colors {
+    .text-#{$key} {
+        color: $val;
+    }
+
+    @for $i from 1 through 9 {
+        .text-#{$key}-light-#{$i} {
+            color: ($val, ${i} * 10);
+        }
+    }
+}
+</code></pre>
