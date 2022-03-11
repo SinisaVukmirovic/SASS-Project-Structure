@@ -76,3 +76,45 @@ $colors: (
     }
 }
 </code></pre>
+
+#### Mixins
+##### Mixins are a way to group up a buchs of CSS propreties and value.
+##### Mixins allow you to define styles that can be re-used throughout your stylesheet.
+<pre><code>
+@mixin btn() {
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-del {
+    @include btn();
+    background-color: red;
+}
+
+// with passing argument
+
+@mixin btn($bg-clr) {
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: $bg-clr;
+}
+
+.btn-del {
+    @include btn(#f00);
+}
+
+// with passing default value, when no argument passed
+
+@mixin btn($bg-clr: #f00) {
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: $bg-clr;
+}
+
+.btn-del {
+    @include btn;
+}
+</code></pre>
