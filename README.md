@@ -1,6 +1,6 @@
-## SASS Project Structure
+# SASS Project Structure
 
-#### To achieve project structure with CSS and SCSS folders where .scss files in SCSS folder are compiled into .css files in CSS folder, by using Live Sass Compiler VS code extension (by Glenn Marks), we need to setup compilation path in the extension's settings.json file, by adding:
+### To achieve project structure with CSS and SCSS folders where .scss files in SCSS folder are compiled into .css files in CSS folder, by using Live Sass Compiler VS code extension (by Glenn Marks), we need to setup compilation path in the extension's settings.json file, by adding:
 <pre><code>
 "liveSassCompile.settings.formats":[
     {
@@ -11,7 +11,7 @@
 ]
 </code></pre>
 
-#### Partial
+### Partial
 ##### Partials are a way to split up out code into multiple different files. A file (partial) for variables, utilities, components, layouts...
 ##### Partials files need to be names with a leading underscore "_variables.scss". This tells SASS compiler not to compile these files into CSS files.
 ##### To be able to use partial files we need to import them with @import 'variables'. Leading underscore or the .scss extention is not necessary.
@@ -21,7 +21,7 @@ _variables.scss
 @import "variables";
 </code></pre>
 
-#### Math
+### Math
 ##### We use SASS Math package by @use "sass:math" at the top of the file
 <pre><code>
 @use "sass:math";
@@ -31,8 +31,8 @@ math.floor(3.7);    => 3
 math.max(1px, 10px, 15px, 5px);    => 15px    
 </code></pre>
 
-#### Map
-##### Maps is SASS is like a colection of variables or values in key-value pairs.
+### Map
+##### Maps in SASS is like a collection of variables or values in key-value pairs.
 <pre><code>
 $colors: (
     "primary": $primary,
@@ -46,9 +46,9 @@ $colors: (
 }
 </code></pre>
 
-#### Each & For loops
+### Each & For loops
 ##### With Each Loop we cycle through the key-value pair inside of a Map, to generate CSS classes with values from a Map.
-##### To output variable name inside the selector name itself, we wrap the variable inside of a {} with a # in front of it.
+##### To output variable name inside the selector name itself, we wrap the variable inside of a { } with a # in front of it.
 ##### For loop is used for creating variations, light/dark variations for example, 
 <pre><code>
 @each $key, $val in $colors {
@@ -64,7 +64,7 @@ $colors: (
 }
 </code></pre>
 
-#### Conditionals (IF/ELSE)
+### Conditionals (if/else)
 ##### We use conditionals to check if conditional is true or false, in example, iterating through light or dark color variation.
 ##### Inside of an Each Loop
 <pre><code>
@@ -77,7 +77,7 @@ $colors: (
 }
 </code></pre>
 
-#### Mixins
+### Mixin
 ##### Mixins are a way to group up a buchs of CSS propreties and value.
 ##### Mixins allow you to define styles that can be re-used throughout your stylesheet.
 <pre><code>
@@ -105,7 +105,7 @@ $colors: (
     @include btn(#f00);
 }
 
-// with passing default value, when no argument passed
+// with passing default value, if no argument passed
 
 @mixin btn($bg-clr: #f00) {
     cursor: pointer;
@@ -119,7 +119,7 @@ $colors: (
 }
 </code></pre>
 
-#### Functions
+### Functions
 ##### Functions return a single value and can be passes as a CSS property value. 
 <pre><code>
 @function light-comp($color) {
@@ -157,9 +157,9 @@ $utilities: (
 )
 </code></pre>
 
-#### Extend @extend feature allows us to extends or inherith from another CSS rule.
+### Extend feature allows us to extends or inherith from another CSS rule.
 ##### @extend is similar to @mixin, with the difference in how they are compiled and no passing arguments 
-##### % in front of class name means this is a placeholder rule, meaning it will not be compiled into CSS as a CSS rule
+##### % in front of class name means this is a placeholder rule, meaning it will not be compiled into CSS as a CSS rule (it can be a regular .class if needed and compiling is necessary)
 <pre><code>
 %flex-layout {
     width: 100%;
